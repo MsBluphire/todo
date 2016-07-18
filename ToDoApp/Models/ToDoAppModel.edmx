@@ -14,6 +14,7 @@
           <Property Name="ListID" Type="int" Nullable="false" />
           <Property Name="DueDateTime" Type="datetime" />
           <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="IsDone" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Lists">
           <Key>
@@ -56,6 +57,7 @@
           <Property Name="ListID" Type="Int32" Nullable="false" />
           <Property Name="DueDateTime" Type="DateTime" Precision="3" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDone" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="List" Relationship="Self.FK_Items_Lists" FromRole="Items" ToRole="Lists" />
         </EntityType>
         <EntityType Name="List">
@@ -78,7 +80,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="TodoDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TodoDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Items" EntityType="Self.Item" />
           <EntitySet Name="Lists" EntityType="Self.List" />
           <AssociationSet Name="FK_Items_Lists" Association="Self.FK_Items_Lists">
@@ -91,7 +93,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TodoDBModelStoreContainer" CdmEntityContainer="TodoDBEntities">
+        <EntityContainerMapping StorageEntityContainer="TodoDBModelStoreContainer" CdmEntityContainer="TodoDBEntities1">
           <EntitySetMapping Name="Items">
             <EntityTypeMapping TypeName="TodoDBModel.Item">
               <MappingFragment StoreEntitySet="Items">
@@ -100,6 +102,7 @@
                 <ScalarProperty Name="ListID" ColumnName="ListID" />
                 <ScalarProperty Name="DueDateTime" ColumnName="DueDateTime" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="IsDone" ColumnName="IsDone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

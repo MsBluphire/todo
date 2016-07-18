@@ -12,7 +12,7 @@ namespace ToDoApp.Controllers
 {
     public class ListsController : Controller
     {
-        private TodoDBEntities db = new TodoDBEntities();
+        private ToDoModel db = new ToDoModel();
 
         // GET: Lists
         public ActionResult Index()
@@ -82,7 +82,7 @@ namespace ToDoApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(list).State = EntityState.Modified;
+                db.Entry(list).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -79,6 +79,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -208,27 +209,28 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs">
-      <DependentUpon>ToDo.tt</DependentUpon>
+      <DependentUpon>ToDoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\List.cs">
-      <DependentUpon>ToDo.tt</DependentUpon>
+      <DependentUpon>ToDoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ToDo.Context.cs">
+    <Compile Include="Models\ToDoAppModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDo.Context.tt</DependentUpon>
+      <DependentUpon>ToDoAppModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ToDo.cs">
+    <Compile Include="Models\ToDoAppModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDo.tt</DependentUpon>
+      <DependentUpon>ToDoAppModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ToDo.Designer.cs">
+    <Compile Include="Models\ToDoAppModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDo.edmx</DependentUpon>
+      <DependentUpon>ToDoAppModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ToDoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -239,15 +241,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ToDo.Context.tt">
+    <Content Include="Models\ToDoAppModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ToDo.edmx</DependentUpon>
-      <LastGenOutput>ToDo.Context.cs</LastGenOutput>
+      <DependentUpon>ToDoAppModel.edmx</DependentUpon>
+      <LastGenOutput>ToDoAppModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ToDo.tt">
+    <Content Include="Models\ToDoAppModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ToDo.edmx</DependentUpon>
-      <LastGenOutput>ToDo.cs</LastGenOutput>
+      <DependentUpon>ToDoAppModel.edmx</DependentUpon>
+      <LastGenOutput>ToDoAppModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -256,12 +258,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\ToDo.edmx">
+    <EntityDeploy Include="Models\ToDoAppModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ToDo.Designer.cs</LastGenOutput>
+      <LastGenOutput>ToDoAppModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ToDo.edmx.diagram">
-      <DependentUpon>ToDo.edmx</DependentUpon>
+    <Content Include="Models\ToDoAppModel.edmx.diagram">
+      <DependentUpon>ToDoAppModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

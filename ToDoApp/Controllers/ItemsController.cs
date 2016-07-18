@@ -12,7 +12,7 @@ namespace ToDoApp.Controllers
 {
     public class ItemsController : Controller
     {
-        private TodoDBEntities db = new TodoDBEntities();
+        private ToDoModel db = new ToDoModel();
 
         // GET: Items
         public ActionResult Index()
@@ -48,7 +48,7 @@ namespace ToDoApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ItemID,ItemName,ListID,DueDateTime,Details")] Item item)
+        public ActionResult Create([Bind(Include = "ItemID,ItemName,ListID,DueDateTime,Details,IsDone")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -82,11 +82,11 @@ namespace ToDoApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ItemID,ItemName,ListID,DueDateTime,Details")] Item item)
+        public ActionResult Edit([Bind(Include = "ItemID,ItemName,ListID,DueDateTime,Details,IsDone")] Item item)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(item).State = EntityState.Modified;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

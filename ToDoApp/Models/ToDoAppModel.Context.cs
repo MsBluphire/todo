@@ -13,10 +13,10 @@ namespace ToDoApp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TodoDBEntities : DbContext
+    public partial class TodoDBEntities1 : DbContext
     {
-        public TodoDBEntities()
-            : base("name=TodoDBEntities")
+        public TodoDBEntities1()
+            : base("name=TodoDBEntities1")
         {
         }
     

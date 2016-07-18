@@ -19,6 +19,7 @@ namespace ToDoApp.Models
         public int ListID { get; set; }
         public Nullable<System.DateTime> DueDateTime { get; set; }
         public string Details { get; set; }
+        public bool IsDone { get; set; }
     
         public virtual List List { get; set; }
     }
