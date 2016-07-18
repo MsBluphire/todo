@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="b0c6ee113a804613a908200e6a45f379" Name="Diagram1">
         <EntityTypeShape EntityType="TodoDBModel.Item" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TodoDBModel.List" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TodoDBModel.List" Width="1.5" PointX="5.125" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="TodoDBModel.FK_Items_Lists" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
