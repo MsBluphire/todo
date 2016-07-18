@@ -32,7 +32,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.List.ListTitle)
+            <a href="Url.Action("MarkDone", new { id="item.ItemID})">
+                @if(item.IsDone)
+                {
+                    <span class="glyphicon glyphicon-check"><</span>
+                }
+                else
+                {
+                    <span class="glyphicon glyphicon-unchecked"></span>
+                }
+            </a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ItemName)
