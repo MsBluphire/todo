@@ -105,14 +105,13 @@ namespace ToDoApp.Controllers
             {
                 return HttpNotFound();
             }
-            if (ModelState.IsValid)
-            {
-                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+
+            item.IsDone = true;
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            ViewBag.ListID = new SelectList(db.Lists, "ListID", "ListTitle", item.ListID);
-            return View(item);
+            
+       
         }
 
         // GET: Items/Delete/5
